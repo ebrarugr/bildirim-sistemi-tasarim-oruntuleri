@@ -10,10 +10,11 @@ Sistemde ürün, müşteri, sepet, sipariş ve ödeme gibi temel bileşenler ele
 
 ## Kullanılan Tasarım Örüntüleri
 
-- Singleton
 - Factory Method
-- Observer
+- Decorator
+- Facade
 - Strategy
+- Observer
 
 ## Proje İçeriği
 
