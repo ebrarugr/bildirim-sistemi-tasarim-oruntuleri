@@ -1,28 +1,33 @@
-# E-Ticaret Sistemi - Yazılım Tasarım Örüntüleri Ödevi
+# Yazılım Tasarım Örüntüleri Ödevi
 
-Bu proje, Yazılım Tasarım Örüntüleri dersi kapsamında hazırlanmıştır.  
-Proje konusu e-ticaret sistemi olarak seçilmiştir.
+## Proje Konusu: Çok Kanallı Bildirim Sistemi
 
-## Projenin Amacı
+Bu projede kullanıcıya farklı kanallar üzerinden bildirim gönderen basit bir bildirim sistemi tasarlanmıştır.
 
-Bu çalışmada e-ticaret sisteminde kullanılabilecek yazılım tasarım örüntüleri incelenmiştir.  
-Sistemde ürün, müşteri, sepet, sipariş ve ödeme gibi temel bileşenler ele alınmıştır.
+Sistemde kullanılan bildirim türleri:
 
-## Kullanılan Tasarım Örüntüleri
+- E-posta bildirimi
+- SMS bildirimi
+- Push bildirimi
+- Sistem güncelleme bildirimi
 
-- Factory Method
-- Decorator
-- Facade
-- Strategy
-- Observer
+Push bildirimi, kullanıcının telefonuna veya bilgisayarına uygulama üzerinden gelen anlık bildirimleri temsil eder. WhatsApp mesaj bildirimi, sosyal medya bildirimi veya mobil uygulama bildirimi bu kapsama örnek verilebilir.
 
-## Proje İçeriği
+---
 
-- UML sınıf diyagramı
-- Tasarım örüntüleri açıklamaları
-- Örnek sistem yapısı
-- Rapor dosyası
+## Kötü Tasarım
 
-## Hazırlayan
+İlk tasarımda bütün bildirim gönderme işlemleri `BildirimYoneticisi` sınıfı içinde yapılmıştır.
 
-Ebrar Uğur
+Bu sınıfta bildirim türleri `if-else` blokları ile kontrol edilmiştir.
+
+Örneğin:
+
+```java
+if (bildirimTuru.equals("EMAIL")) {
+    // E-posta bildirimi gönder
+} else if (bildirimTuru.equals("SMS")) {
+    // SMS bildirimi gönder
+} else if (bildirimTuru.equals("PUSH")) {
+    // Push bildirimi gönder
+}
