@@ -11,7 +11,7 @@ public class LoglamaBildirim extends BildirimDecorator {
         System.out.println("[LOG] Kullanıcı: " + kullaniciAdi);
         System.out.println("[LOG] Zaman: " + java.time.LocalDateTime.now());
 
-        // Asıl bildirimi gönder (sarmaladığı nesneye delege eder)
+        
         sarmalananKanal.bildirimGonder(kullaniciAdi, mesaj);
 
         System.out.println("[LOG] Bildirim başarıyla gönderildi.");
