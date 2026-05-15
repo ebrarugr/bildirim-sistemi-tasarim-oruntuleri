@@ -2,36 +2,26 @@ public class Main {
 
     public static void main(String[] args) {
 
+        
         BildirimServisi bildirimServisi = new BildirimServisi();
 
-        bildirimServisi.bildirimGonder(
-                "EMAIL",
-                "Ebrar",
-                "Hesabınıza yeni bir giriş yapıldı."
-        );
-
+        bildirimServisi.bildirimGonder("EMAIL", "Ebrar", "Hesabınıza yeni bir giriş yapıldı.");
+        System.out.println("-----------------------------");
+        bildirimServisi.bildirimGonder("SMS", "Ebrar", "Doğrulama kodunuz: 4821");
         System.out.println("-----------------------------");
 
-        bildirimServisi.bildirimGonder(
-                "SMS",
-                "Ebrar",
-                "Doğrulama kodunuz: 4821"
-        );
+       
+        BildirimKanali emailKanali = new EmailBildirim();
+        BildirimKanali loglananEmail = new LoglamaBildirim(emailKanali);
 
-        System.out.println("-----------------------------");
+        System.out.println("=== Loglamalı E-posta Bildirimi ===");
+        loglananEmail.bildirimGonder("Ebrar", "Şifreniz başarıyla değiştirildi.");
 
-        bildirimServisi.bildirimGonder(
-                "PUSH",
-                "Ebrar",
-                "Yeni bir mesajınız var."
-        );
+      
+        BildirimKanali smsKanali = new SmsBildirim();
+        BildirimKanali loglananSms = new LoglamaBildirim(smsKanali);
 
-        System.out.println("-----------------------------");
-
-        bildirimServisi.bildirimGonder(
-                "SISTEM_GUNCELLEME",
-                "Ebrar",
-                "Sistem bakımı bu gece 02.00'de yapılacaktır."
-        );
+        System.out.println("=== Loglamalı SMS Bildirimi ===");
+        loglananSms.bildirimGonder("Ebrar", "Doğrulama kodunuz: 9934");
     }
 }
