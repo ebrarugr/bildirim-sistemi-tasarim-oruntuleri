@@ -1,10 +1,4 @@
-/**
- * Decorator Pattern - Somut Dekoratör: Loglama
- *
- * Herhangi bir BildirimKanali nesnesini sararak bildirim gönderimlerini loglar.
- * Hangi kullanıcıya, hangi saatte bildirim gönderildiğini kaydeder.
- * Mevcut bildirim sınıfları (Email, SMS, Push vb.) değiştirilmeden loglama eklenir.
- */
+
 public class LoglamaBildirim extends BildirimDecorator {
 
     public LoglamaBildirim(BildirimKanali sarmalananKanal) {
