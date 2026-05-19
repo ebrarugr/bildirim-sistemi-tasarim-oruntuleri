@@ -23,7 +23,7 @@ jobs:
           java-version: '21'
 
       - name: Java dosyalarini derle
-        run: javac src/*.java
+        run: mkdir -p out && javac -encoding UTF-8 -d out src/*.java
 
       - name: Programi calistir
-        run: java -cp src Main
+        run: java -cp out Main
